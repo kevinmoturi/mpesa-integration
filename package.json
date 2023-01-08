@@ -5,7 +5,8 @@
   "description": "Mpesa Integration in node js",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "author": "Kevin Moturi",
   "license": "ISC",
