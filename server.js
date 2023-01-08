@@ -52,7 +52,7 @@ app.post('/api/v1/mpesa/stk-push', async (req, res) => {
                 PartyA: req.body.phone_number,
                 PartyB: parseInt(process.env.MPESA_SHORT_CODE),
                 PhoneNumber: req.body.phone_number,
-                CallBackURL: `${process.env.MPESA_CALLbACK}`,
+                CallBackURL: `${process.env.MPESA_CALLBACK}`,
                 AccountReference: "Test",
                 TransactionDesc: "Test",
             })
@@ -67,6 +67,7 @@ app.post('/api/v1/mpesa/stk-push', async (req, res) => {
 app.post('/api/v1/mpesa/stk-callback', async (req, res) => {
     try {
         console.log(req.body)
+        return res.status(200).json({ success: true, message: 'Success' })
     } catch (error) {
         res.status(400).json({ success: false, message: 'Sorry, an error occurred !', error })
     }
